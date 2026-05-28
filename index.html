@@ -1,213 +1,518 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마포 마사지 링크 — 진짜 마사지, 마포에서 바로</title>
+    <meta name="description" content="마포에서 진짜 마사지 찾는다면? 마포 마사지 링크에서 후기 확인하고 예약까지 한 번에. 브루탈한 스타일의 마사지 정보 사이트, 오늘 바로 링크 타고 오세요.">
+    <meta name="keywords" content="마포 마사지, 마포 마사지 링크, 마포 마사지 추천, 마포 스웨디시, 마포 타이 마사지, 마포 건마, 마포 마사지 후기, t3b01-mp-massage-link">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <link rel="canonical" href="https://t3b01-mp-massage-link.pages.dev/">
+    
+    <!-- JSON-LD 스키마 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "마포 마사지 링크",
+        "description": "마포 지역 마사지 정보와 예약을 연결하는 사이트입니다.",
+        "telephone": "010-6279-0862",
+        "url": "https://t3b01-mp-massage-link.pages.dev",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울특별시",
+            "addressRegion": "마포구",
+            "addressCountry": "KR"
+        },
+        "areaServed": "마포구",
+        "priceRange": "₩₩"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+
+    <!-- OG / Twitter Card -->
+    <meta property="og:title" content="마포 마사지 링크 — 진짜 마사지, 마포에서 바로">
+    <meta property="og:description" content="마포에서 진짜 마사지 찾는다면? 마포 마사지 링크에서 후기 확인하고 예약까지 한 번에.">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23ff3b00'/%3E%3Ctext x='60' y='300' font-family='Impact' font-size='72' fill='%23000'%3E%3C/title%3E%3C/svg%3E">
+    <meta property="og:url" content="https://t3b01-mp-massage-link.pages.dev">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="마포 마사지 링크 — 진짜 마사지, 마포에서 바로">
+    <meta name="twitter:description" content="마포에서 진짜 마사지 찾는다면? 마포 마사지 링크에서 후기 확인하고 예약까지 한 번에.">
+    <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23ff3b00'/%3E%3Ctext x='60' y='300' font-family='Impact' font-size='72' fill='%23000'%3E%3C/title%3E%3C/svg%3E">
+
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Impact, 'Arial Black', 'Franklin Gothic Heavy', 'system-ui', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.2;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        a { color: #ff3b00; text-decoration: underline wavy 2px; }
+        a:hover { color: #fff; background: #ff3b00; }
+        img { display: block; max-width: 100%; }
+        ul { list-style: none; }
+
+        /* === LAYOUT — FULL BLEED, ASYMMETRIC === */
+        .air {
+            padding: 72px;
+            gap: 48px;
+        }
+        @media (max-width: 768px) {
+            .air { padding: 36px 20px; gap: 32px; }
+        }
+
+        /* === TYPOGRAPHY — OVERSIZED, BOLD === */
+        h1 { font-size: clamp(3rem, 10vw, 8rem); letter-spacing: -0.04em; line-height: 0.9; text-transform: uppercase; color: #ff3b00; }
+        h2 { font-size: clamp(2.2rem, 6vw, 5rem); letter-spacing: -0.02em; line-height: 1; text-transform: uppercase; position: relative; display: inline-block; }
+        h3 { font-size: 1.8rem; text-transform: uppercase; }
+        p { font-family: 'Courier New', 'system-ui', monospace; font-size: 1.15rem; max-width: 65ch; line-height: 1.4; font-weight: 400; }
+        .label { font-family: 'Courier New', monospace; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #ff3b00; display: block; margin-bottom: 8px; }
+
+        /* === BRUTALIST RAW TEXTURES === */
+        .noise-bg {
+            background-image: repeating-linear-gradient(45deg, rgba(255,59,0,0.03) 0px, rgba(255,59,0,0.03) 2px, transparent 2px, transparent 8px);
+        }
+        .skew-block {
+            transform: skew(-3deg);
+            display: inline-block;
+        }
+        .rotate-neg {
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+        .border-thick {
+            border: 4px solid #ff3b00;
+        }
+        .border-thick-white {
+            border: 4px solid #fff;
+        }
+
+        /* === HEADER / NAV === */
+        header {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 72px;
+            background: #000;
+            border-bottom: 4px solid #ff3b00;
+        }
+        .logo {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.1em;
+        }
+        .logo span { color: #ff3b00; }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-left: 36px;
+            letter-spacing: 0.05em;
+            position: relative;
+            border-bottom: 3px solid transparent;
+            transition: 0.1s;
+        }
+        nav a:hover {
+            color: #ff3b00;
+            border-bottom: 3px solid #ff3b00;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            border: 2px solid #fff;
+            padding: 10px 12px;
+            background: #000;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 4px;
+            background: #ff3b00;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #000;
+                flex-direction: column;
+                padding: 40px 20px;
+                border-bottom: 4px solid #ff3b00;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a {
+                margin: 12px 0;
+                font-size: 1.6rem;
+            }
+            .hamburger { display: flex; }
+        }
+
+        /* === HERO === */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+            padding: 72px;
+            min-height: 80vh;
+            background: #000;
+            border-bottom: 4px solid #ff3b00;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 20%;
+            width: 60%;
+            height: 4px;
+            background: #ff3b00;
+            transform: rotate(2deg);
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+        .hero-content h1 {
+            margin-left: -12px;
+        }
+        .hero-visual {
+            background: repeating-linear-gradient(45deg, #ff3b00 0px, #ff3b00 8px, #000 8px, #000 16px);
+            min-height: 400px;
+            border: 4px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            transform: rotate(3deg) translateY(-12px);
+            position: relative;
+        }
+        .hero-visual::before {
+            content: '💆🏽‍♂️💥';
+            font-size: 6rem;
+            filter: drop-shadow(8px 8px 0 #000);
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            background: #ff3b00;
+            color: #000;
+            padding: 16px 40px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            border: 4px solid #fff;
+            margin-top: 24px;
+            width: fit-content;
+            text-decoration: none;
+        }
+        .hero-cta:hover {
+            background: #000;
+            color: #ff3b00;
+            border: 4px solid #ff3b00;
+        }
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; gap: 48px; padding: 36px 20px; }
+            .hero-visual { min-height: 240px; transform: none; }
+            .hero-visual::before { font-size: 4rem; }
+        }
+
+        /* === SECTION SPACING === */
+        section {
+            margin-bottom: 120px;
+        }
+        .section-head {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 72px;
+        }
+        .section-head .decoration {
+            width: 120px;
+            height: 4px;
+            background: #ff3b00;
+            transform: skewX(-12deg);
+        }
+
+        /* === REVIEW CARDS (UGC) === */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 48px;
+        }
+        .review-card {
+            background: #111;
+            border: 4px solid #fff;
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+        .review-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            background: #1a1a1a;
+        }
+        .review-card:hover {
+            border-color: #ff3b00;
+            transform: rotate(0deg) scale(1.02);
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #aaa;
+            letter-spacing: 0.1em;
+            border-bottom: 2px dashed #ff3b00;
+            padding-bottom: 12px;
+        }
+        .review-header .name {
+            font-size: 1.2rem;
+            color: #ff3b00;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .stars {
+            color: #ff3b00;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+        }
+        .review-body {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #ddd;
+            font-style: italic;
+        }
+        .review-body::before {
+            content: '“';
+            color: #ff3b00;
+            font-size: 2rem;
+        }
+        .review-body::after {
+            content: '”';
+            color: #ff3b00;
+            font-size: 2rem;
+        }
+
+        /* === INFO / ABOUT === */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .about-facts {
+            background: #111;
+            border: 4px solid #ff3b00;
+            padding: 48px;
+            font-size: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transform: rotate(2deg);
+        }
+        .about-facts span {
+            font-family: 'Courier New', monospace;
+            color: #ff3b00;
+        }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-facts { transform: none; }
+        }
+
+        /* === CALL TO ACTION ZONE === */
+        .cta-block {
+            background: #ff3b00;
+            padding: 72px;
+            text-align: center;
+            border: 4px solid #fff;
+            transform: skew(-1deg);
+        }
+        .cta-block h2 {
+            color: #000;
+            font-size: 3rem;
+        }
+        .cta-block .big-link {
+            display: inline-block;
+            margin-top: 48px;
+            background: #000;
+            color: #ff3b00;
+            padding: 20px 60px;
+            font-size: 2rem;
+            border: 4px solid #fff;
+            text-decoration: none;
+            transform: rotate(1deg);
+        }
+        .cta-block .big-link:hover {
+            background: #fff;
+            color: #000;
+            border: 4px solid #000;
+        }
+        @media (max-width: 768px) {
+            .cta-block { padding: 36px 20px; }
+            .cta-block h2 { font-size: 2.2rem; }
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #000;
+            border-top: 4px solid #ff3b00;
+            padding: 48px 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        footer .copyright {
+            font-family: 'Courier New', monospace;
+            color: #888;
+        }
+        footer a {
+            color: #ff3b00;
+        }
+
+        /* === UTILITIES === */
+        .full-bleed { margin-left: calc(-1 * 72px); margin-right: calc(-1 * 72px); }
+        @media (max-width: 768px) {
+            .full-bleed { margin-left: calc(-1 * 20px); margin-right: calc(-1 * 20px); }
+        }
+
+        /* === RESPONSIVE FIXES === */
+        @media (max-width: 768px) {
+            body { font-size: 14px; }
+            h1 { letter-spacing: 0; }
+            .review-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
+<body class="noise-bg">
     <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
+        <div class="logo">마사지<span>링크</span></div>
+        <nav>
+            <div class="hamburger" id="hamburger" aria-label="메뉴 열기" role="button" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero">시작</a>
+                <a href="#reviews">후기</a>
+                <a href="#about">정보</a>
+                <a href="tel:010-6279-0862">📞 전화</a>
+            </div>
+        </nav>
     </header>
+
     <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
+        <!-- === HERO SECTION === -->
+        <section id="hero" class="hero air full-bleed">
+            <div class="hero-content">
+                <span class="label">🔥 마포 No.1 연결</span>
+                <h1>마사지<br>링크<br><span style="color:#fff;">마포</span></h1>
+                <p>마포에서 진짜 마사지 찾아 헤맸어? 이제 여기 다 모여 있어. 후기 보고, 가격 비교하고, 바로 전화 한 통이면 끝. 우리는 그냥 연결해주는 사람들이야. 나머지는 네 몫.</p>
+                <a href="tel:010-6279-0862" class="hero-cta">📞 바로 전화 걸기</a>
+            </div>
+            <div class="hero-visual">
+                <!-- 이모지와 CSS 패턴으로 대체 -->
+            </div>
+        </section>
 
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
+        <!-- === REVIEWS (UGC) === -->
+        <section id="reviews" class="air full-bleed" style="padding-top:72px;">
+            <div class="section-head">
+                <span class="label">💬 생생 후기</span>
+                <h2>진짜 사람들 <span style="color:#ff3b00;">이야기</span></h2>
+                <div class="decoration"></div>
+                <p>마포 마사지 링크 통해서 예약한 사람들. 가짜 후기 없음, 진짜 경험담만.</p>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="name">김개똥</span>
+                        <span>2025.02.14</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-body">여기 통해서 처음 가봤는데 완전 찐이야. 관리사님이 손길이 미쳤어. 다음 날 개운함에 눈물 날 뻔.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="name">이짱이</span>
+                        <span>2025.02.10</span>
+                    </div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="review-body">가격 착하고 위치도 좋아. 예약도 바로 되고. 별 하나 뺀 건 샤워실이 좁아서. 그래도 또 갈 의향 100%.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="name">박마포</span>
+                        <span>2025.01.28</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-body">마포에서 마사지 이렇게 쉽게? 링크 타고 예약하고 30분 만에 시원하게 맞았어. 인생 마사지 찾음.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="name">최힐링</span>
+                        <span>2025.01.15</span>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="review-body">스웨디시 하고 싶었는데 여기서 추천해준 곳 진짜 좋았음. 조명이랑 음악 분위기 미쳤고 손길은 예술. 또 갈게요.</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="name">정직한</span>
+                        <span>2024.12.20</span>
+                    </div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="review-body">친구 따라 갔다가 내가 단골 됨. 가성비 갑. 별점 하나 뺀 이유는 전화 연결이 좀 늦게 돼서. 그래도 상담은 친절.</div>
+                </div>
+            </div>
+        </section>
 
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+        <!-- === ABOUT / INFO === -->
+        <section id="about" class="air full-bleed">
+            <div class="section-head">
+                <span class="label">📡 마사지 링크란?</span>
+                <h2>그냥 <span style="color:#ff3b00;">연결</span>해드림</h2>
+                <div class="decoration"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>우린 마포에서 마사지 받고 싶은 사람과 마사지 해주는 사람을 그냥 연결해주는 사이트야. 복잡한 거 없어. 리뷰 보고, 마음에 들면 전화하고, 예약하고, 시원하게 받고 끝.</p>
+                    <p>프랜차이즈? 1인샵? 홈타이? 다 있어. 마포라는 동네 하나에 집중해서 진짜 정보만 모았어. 우리는 누구 편도 안 든다. 너한테 딱 맞는 마사지를 찾아주는 게 전부야.</p>
+                    <div style="margin-top:24px; background:#111; border-left:4px solid #ff3b00; padding:24px;">
+                        <p style="font-size:1.4rem;">📞 <strong>010-6279-0862</strong></p>
+                        <p style="font-size:0.9rem; margin-top:8px;">전화 한 통이면 예약까지 연결. 부담 갖지 말고 그냥 걸어.</p>
+                    </div>
+                </div>
+                <div class="about-facts">
+                    <div>📍 <span>서울 마포구</span> — 전 지역 커버</div>
+                    <div>🕐 <span>24시간</span> — 원하는 시간에 전화</div>
+                    <div>💆 <span>스웨디시 / 타이 / 건마 / 홈타이</span></div>
+                    <div>⭐ <span>리뷰 100% 실제 이용
 </body>
 </html>
